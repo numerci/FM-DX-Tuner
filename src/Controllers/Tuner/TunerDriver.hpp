@@ -27,8 +27,14 @@ public:
     enum TuneFlags : uint8_t
     {
         TUNE_DEFAULT = 0,
-        TUNE_SCAN = 1 << 0
+        TUNE_SCAN = 1 << 0,
+        TUNE_SEEK = 1 << 1
     };
+
+    friend inline TuneFlags operator|(TuneFlags a, TuneFlags b)
+    {
+        return static_cast<TuneFlags>(static_cast<uint8_t>(a) | static_cast<uint8_t>(b));
+    }
 
     enum QualityMode : uint8_t
     {
@@ -63,6 +69,9 @@ public:
     virtual int16_t getQualityOffset(QualityMode mode) = 0;
     virtual int16_t getQualityBandwidth(QualityMode mode) = 0;
     virtual bool getQualityStereo(QualityMode mode) = 0;
+    virtual bool getSquelch() { return true; }
+    virtual int16_t getQualityNoise(QualityMode mode) { (void)mode; return -1; }
+    virtual int16_t getQualityCoChannel(QualityMode mode) { (void)mode; return -1; }
 
     virtual const char* getName() = 0;
     
