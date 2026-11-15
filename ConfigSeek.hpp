@@ -7,25 +7,25 @@
 /* Step size [kHz] used while seeking (independent of the manual tuning
    step). */
 #define SEEK_STEP_FM 100
-#define SEEK_LIMIT_FM_LOW  87000
+#define SEEK_LIMIT_FM_LOW  87500
 #define SEEK_LIMIT_FM_HIGH 108000
 
 #define SEEK_STEP_OIRT 30
-#define SEEK_LIMIT_OIRT_LOW  64000
+#define SEEK_LIMIT_OIRT_LOW  65000
 #define SEEK_LIMIT_OIRT_HIGH 74000
 
 /* LW/MW. */
 #define SEEK_AM_LOW_STEP 9
 
 #define SEEK_LIMIT_LW_LOW  144
-#define SEEK_LIMIT_LW_HIGH 513
+#define SEEK_LIMIT_LW_HIGH 351
 
 #if SEEK_AM_LOW_STEP == 10
 #define SEEK_LIMIT_MW_LOW  520
-#define SEEK_LIMIT_MW_HIGH 1720
+#define SEEK_LIMIT_MW_HIGH 1700
 #else
-#define SEEK_LIMIT_MW_LOW  522
-#define SEEK_LIMIT_MW_HIGH 1791
+#define SEEK_LIMIT_MW_LOW  504
+#define SEEK_LIMIT_MW_HIGH 1701
 #endif
 
 #define SEEK_STEP_SW 5
